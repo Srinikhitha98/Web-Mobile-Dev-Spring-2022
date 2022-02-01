@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rock Paper Scissor</title>
+    </head>
+    <script src="Game.js"></script>
+    <body>
+        <!--To display the game name-->
+        <div class="GameName">
+            <h1>Rock paper scissor</h1>
+        </div>
+        <!--To display the scores of each player-->
+        <div class="Scorecard">
+            <h1><span>Scores</span></h1>
+            <div class="PlayerA">
+                <h2>Player A</h2>
+            </div>
+            <div class="PlayerB">
+                <h2>Player B</h2>
+            </div>
+        </div>
+       <!--Block for selecting the options-->
+        <div class="select">
+            <button id="R" value="1" onclick="game(value)">Rock</button>
+            <button id="P" value="2"onclick="game(value)">Paper</button>
+            <button id="S" value="3"onclick="game(value)">scissor</button>
+        </div>
+
+    </body>
+
+</html>
