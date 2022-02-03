@@ -3,18 +3,11 @@ let PlayerA = 0;
 let PlayerB = 0;
 let result="Start"
 
-// display the scores
-function scorecard() {
-    document.getElementById("PlayA").innerText=PlayerA ;
-    document.getElementById("PlayB").innerText=PlayerB;
-    document.getElementById("resulttext").innerText = result;
-
-}
-
+// main function 
 function game(clickvalue) {
    
     var Random = Rgen();
-    let re = comp(clickvalue, Random);
+    comp(clickvalue, Random);
     scorecard();
 }
 
@@ -22,6 +15,14 @@ function game(clickvalue) {
 function Rgen() {
     var hv = 4, lv = 1;
     return Math.floor(Math.random() * (hv - lv) + lv)
+}
+
+// display the scores
+function scorecard() {
+    document.getElementById("PlayA").innerText=PlayerA ;
+    document.getElementById("PlayB").innerText=PlayerB;
+    document.getElementById("resulttext").innerText = result;
+
 }
 // comparing the players
 function comp(a, b) {
@@ -59,7 +60,7 @@ function comp(a, b) {
 
 }
 
-
+// close the game after any player scores 10
 function closegame()
 {   
     
