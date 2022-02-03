@@ -1,31 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Rock Paper Scissor</title>
-    </head>
-    <script src="Game.js"></script>
-    <body>
-        <!--To display the game name-->
-        <div class="GameName">
-            <h1>Rock paper scissor</h1>
-        </div>
-        <!--To display the scores of each player-->
-        <div class="Scorecard">
-            <h1><span>Scores</span></h1>
-            <div class="PlayerA">
-                <h2>Player A</h2>
-            </div>
-            <div class="PlayerB">
-                <h2>Player B</h2>
-            </div>
-        </div>
-       <!--Block for selecting the options-->
-        <div class="select">
-            <button id="R" value="1" onclick="game(value)">Rock</button>
-            <button id="P" value="2"onclick="game(value)">Paper</button>
-            <button id="S" value="3"onclick="game(value)">scissor</button>
-        </div>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </body>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<head>
+    <title>Rock Paper Scissor</title>
+
+    <style>
+        #closegame {
+            display: none
+        }
+
+        ;
+    </style>
+</head>
+<script src="Game.js"></script>
+
+
+
+<body>
+    <!--To display the game name-->
+    <div class="GameName text-center text-info ">
+        <h1 class=" text-centre font-weight-italic">Rock paper scissor</h1>
+
+
+        <!--Start the Game-->
+        <div class="container text-centre text-info mt-5" ">
+            <div class=" row justify-content-md-center ">
+                <div class=" game col-md-5 p-3 text-center pt-4" id="Startgame">
+            <h1 class="result text-info font-weight-italic display-4" id="resulttext">Let's Begin the Game </h1>
+            <p>
+                <span class="text-dark font-weight-italic">PlayerA: <b id="PlayA"></b></span>
+                <span class="text-dark font-weight-italic">PlayerB: <b id="PlayB"></b></span>
+            </p>
+            <!--Block for selecting the options-->
+            <div class="select">
+                <button class="Rock border border-info" value="1" onclick="game(value)"><img src="Rock.jpg "
+                        width="70px" height="70px"></button>
+                <button class="border border-info" value="2" onclick="game(value)"><img src="paper.jpg " width="70px"
+                        height="70px"></button>
+                <button class="border border-info" value="3" onclick="game(value)"><img src="scissors.jpg" width="70px"
+                        height="70px"></button>
+            </div>
+
+        </div>
+        <div class="col-md-5 p-3 text-center pt-5" id="closegame">
+
+            <h1 class="result text-info font-weight-italic display-4" id="resulttext"></h1>
+            <p>
+                <span class="text-dark  font-weight-italic">PlayerA: <b id="PlayA">0</b></span>
+                <span class="text-dark font-weight-italic">PlayerB: <b id="PlayB">0</b></span>
+            </p>
+
+            <button type="button" onClick="window.location.reload();" class="btn-sm btn-info btn-block">Play
+                again</button>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+</body>
 
 </html>

@@ -1,66 +1,71 @@
+// set the intial scores
+let PlayerA = 0;
+let PlayerB = 0;
+let result="Start"
+
+// display the scores
+function scorecard() {
+    document.getElementById("PlayA").innerText=PlayerA ;
+    document.getElementById("PlayB").innerText=PlayerB;
+    document.getElementById("resulttext").innerText = result;
+
+}
+
+function game(clickvalue) {
+   
+    var Random = Rgen();
+    let re = comp(clickvalue, Random);
+    scorecard();
+}
+
 // Random genertor 
-function Rgen()
-{
-var hv=4,lv=1;
-return Math.floor(Math.random()*(hv-lv)+lv)
+function Rgen() {
+    var hv = 4, lv = 1;
+    return Math.floor(Math.random() * (hv - lv) + lv)
 }
 // comparing the players
-function comp(a,b,playerA,playerB){
-    
-    if (a==b){
-         console.log(0);
+function comp(a, b) {
+
+    if (a == b) {
+        result="Draw"
+         return;
     }
-    if(a==1)
+    else if ((a == 1 && b == 3) || (a == 2 && b == 1) || (a == 3 && b == 2)) 
     {
-    if(b==2){
-        playerB=playerB+1;
-        console.log("Scorecard of PlayerB" + playerB);
+        PlayerA += 1;
+        
+        if (PlayerA == 10) {
+            result = "Player A is the winner"
+            closegame();
+        }
+        else {
+            result = "Player A win"
+            return;
+        }
+
     }
-    else if(b==3){
-        playerA=playerA+1;
-        console.log("Scorecard of PlayerA" + playerA);
+    else {
+        PlayerB+=1;
+        
+        if (PlayerB == 10) {
+            result = "Player B is the winner"
+            closegame();
+        }
+        else {
+            result = "Player A lost"
+            return;
+        }
     }
+
 }
-    if(a==2)
-    {
-    if(b==3){
-        playerB=playerB+1;
-        console.log("Scorecard of PlayerB" + playerB);
-    }
-    else if(b==1){
-        playerA=playerA+1;
-        console.log("Scorecard of PlayerA" + playerA);
-    }
-}
-    if(a==3)
-    {
-    if(b==1){
-        playerB=playerB+1;
-        console.log("Scorecard of PlayerB" + playerB);
-    }
-    else if(b==2){
-        playerA=playerA+1;
-        console.log("Scorecard of PlayerA" + playerA);
-    }
-}
-}
+
+
+function closegame()
+{   
     
-
-
-function scorecard(a,b){
-    
-
-}
-
-
-
-
-function game(clickvalue)
-{
-    var Random=Rgen();
-    console.log(Random);
-    let playerA=0;
-    let playerB=0;
-    comp(clickvalue,Random,playerA,playerB);
+    var startgame = document.getElementById('Startgame');
+    startgame.remove();	
+    document.getElementById("closegame").style.display = "block";
+    scorecard();
     
 }
