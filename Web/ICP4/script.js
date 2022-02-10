@@ -17,11 +17,11 @@ function GithubInfo(user) {
 function Displaydata(user) {
     //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
     
-        document.getElementById("user").innerHTML="User  : " + user.login;
+        document.getElementById("user").innerHTML="Username  : " + user.login;
         document.getElementById("userid").innerHTML="User id : " + user.id;
         document.getElementById("image").src=user.avatar_url;
         document.getElementById("link").href=user.html_url;
-        document.getElementById("name").innerHTML="User Name : " + user.name;
+        document.getElementById("name").innerHTML="Name of the user : " + user.name;
     
     
 
